@@ -1,3 +1,3 @@
 # Workforce_Modeling
 
-https://jasoncho0914.shinyapps.io/worforce_modeling/
+https://jasoncho0914.shinyapps.io/workforce_modeling/
