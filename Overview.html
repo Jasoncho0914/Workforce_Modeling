@@ -1,0 +1,152 @@
+
+
+
+<div id="introduction" class="section level1" number="1">
+<h1><span class="header-section-number">1</span> Introduction</h1>
+<p>Fossil fuel consumption in buildings continues to be the primary
+contributor to greenhouse gas emissions in the United States (U.S). In
+2015, the U.S. building sector was responsible for 565.8 million metric
+tons of carbon dioxide equivalent, representing approximately 8.6% of
+the nation’s total greenhouse gas emissions. When factoring in indirect
+emissions, the building sector’s overall contribution rises to 29% <span class="citation">(2020)</span>. Among the most effective strategies to
+curb emissions from buildings is through electrification, a transition
+from conventional energy sources to electricity for heating and cooking.
+Notably, the city of Ithaca took a pioneering step on June 5th, 2019, by
+adopting the Ithaca Green New Deal resolution, a government-led
+commitment to achieve complete decarbonization by 2030. A central facet
+of this initiative involves electrification of all buildings in the city
+by 2030.</p>
+<p>To accomplish this goal, the city of Ithaca faces the challenge of
+assessing the necessary workforce expansion in conjunction with its
+existing labor pool. As a PiTech Siegel PhD Impact Fellow, I
+collaborated closely with the City of Ithaca and partnered with <a href="https://www.blocpower.io">BlocPower</a> over the summer to develop
+a web application. This application is designed to aid stakeholders, not
+only within Ithaca but across various municipalities in New York state,
+in estimating the quarterly workforce increase required to achieve the
+goal of complete building electrification by 2030. The web application
+receives the number of buildings and number of workers as inputs and
+estimate the percentage of total buildings electrified by 2030. Drawing
+from the analysis, introduction of at least 25 HVAC technicians, 18
+plumbers, and 8 electricians per quarter from 2024 to 2030 is required
+to meet the demand of 100% electrification by 2030 in the city of
+Ithaca. By the culmination of 2030, an additional 675 HVAC technicians,
+486 plumbers, and 216 electricians would have been integrated into the
+city’s workforce.</p>
+</div>
+<div id="inputs" class="section level1" number="2">
+<h1><span class="header-section-number">2</span> Inputs</h1>
+<p>The web application’s functionality revolves around three key
+inputs:</p>
+<div id="number-of-buildings" class="section level2" number="2.1">
+<h2><span class="header-section-number">2.1</span> Number of
+Buildings</h2>
+<p>The City of Ithaca provided comprehensive data containing the list of
+all residential buildings and their respective types. These categories
+encompass single family residences, small multi-family residences, and
+large multi-family residences. The dataset consists of 2,579 single
+family homes, 1,038 small multi-family homes, and 625 large multi-family
+homes, totaling 4,242 residential buildings that require electrification
+in Ithaca.</p>
+</div>
+<div id="initial-workers" class="section level2" number="2.2">
+<h2><span class="header-section-number">2.2</span> Initial Workers</h2>
+<p>This input signifies the current workforce available within the
+region for participation in building electrification projects. It’s
+important to note that this figure represents the subset of workers who
+can dedicate their working hours to electrification. After consulting
+with local contractors and industry experts at BlocPower, it was assumed
+that 10% of the existing workforce can be allocated for building
+electrification; Users have the flexibility to adjust this value to
+explore different scenarios. According to the U.S. Bureau of Labor
+Statistics, the number of HVAC technicians, plumbers, and electricians,
+the three workforce required for building electrification, were 80, 110
+and 150 respectively for year 2022 <span class="citation">(2023)</span>.
+Thus, initial counts of 8 HVAC technicians, 11 plumbers, and 15
+electricians were used, as depicted in the initial row of Table 2 on the
+Report tab of the web application.</p>
+</div>
+<div id="workers-introduced" class="section level2" number="2.3">
+<h2><span class="header-section-number">2.3</span> Workers
+Introduced</h2>
+<p>The second row of Table 2 on the Report tab of the application
+denotes the incremental workforce introduced to the area per quarter,
+commencing from the second quarter of 2024. A few combinations of input
+were tested to determine the minimal workforce increase required in each
+category: HVAC technicians, plumbers and electricians, to realize
+complete building electrification by 2030.</p>
+</div>
+</div>
+<div id="assumptions" class="section level1" number="3">
+<h1><span class="header-section-number">3</span> Assumptions</h1>
+<div id="daily-working-hours" class="section level2" number="3.1">
+<h2><span class="header-section-number">3.1</span> Daily working
+hours</h2>
+<p>The average daily working hours were established at 7.3 hours.
+Initially, an annual work schedule was established with 240 days,
+encompassing a full 8 hours of work each day, culminating in a total of
+1,920 working hours annually. This sum was subsequently distributed
+across the span of a typical year, consisting of 260 weekdays. The value
+we get is 7.38 hours per day. To be more conservative, this value was
+then rounded down to 7.3 hours per day. The web application allows its
+user to change this values at the assumption tab.</p>
+</div>
+<div id="workforce-need-and-time-commitment" class="section level2" number="3.2">
+<h2><span class="header-section-number">3.2</span> Workforce need and
+time commitment</h2>
+<p>The lower and upper bound on the number of hours and workers needed
+for each residential building type (single, small multi-family, and
+large multi-family) are listed on Table 3 in the “Assumption” tab of the
+web application. Workforce need and the time required for each buildings
+were assumed to be uniformly distributed with the upper and the lower
+bound described in the table. These estimates are guided by insights
+from experts at BlocPower. While various factors could influence time
+commitment and workforce needs, no granular data were available for
+statistical estimation of such parameters. Users are welcome to edit the
+assumption table to explore different scenarios and assess their
+impact.</p>
+</div>
+<div id="calendar" class="section level2" number="3.3">
+<h2><span class="header-section-number">3.3</span> Calendar</h2>
+<p>The calendar from year 2024 to year 2030 were used. Other than
+weekends, the following 13 holidays observed in the state of New York
+were excluded from the working day calendar: New Year’s Day (January 1),
+Martin Luther King’s Birthday (3rd Monday in January), Lincoln’s
+Birthday (February 12), Washington’s Birthday (3rd Monday in February),
+Memorial Day (last Monday in May), Flag Day (2nd Sunday in June),
+Juneteenth (June 19), Independence Day (July 4), Labor Day (1st Monday
+in September), Columbus Day (2nd Monday in October), Veterans’ Day
+(November 11), Thanksgiving Day (4th Thursday in November), and
+Christmas (December 25).</p>
+</div>
+<div id="demand-for-building-electrification" class="section level2" number="3.4">
+<h2><span class="header-section-number">3.4</span> Demand for Building
+Electrification</h2>
+<p>We adopted a general assumption that all landlords in the city of
+Ithaca would express interest in electrifying their buildings at some
+point during the 7-year period (2024 to 2030). To simulate this, at the
+beginning of each year, 1/7 of the buildings were randomly selected for
+electrification, and the sequencing of buildings to undergo
+electrification was also selected at random (uniform distribution). We
+acknowledge that assuming universal interest in electrification would
+inflate the demand for building electrification. However, it’s important
+to highlight that the primary objective of this project was to estimate
+the necessary workforce to achieve the comprehensive decarbonization of
+all buildings. In this context, we consider this assumption to be a
+reasonable simplification.</p>
+</div>
+</div>
+<div id="references" class="section level1 unnumbered">
+<h1 class="unnumbered">References</h1>
+<div id="refs" class="references csl-bib-body hanging-indent" line-spacing="2">
+<div id="ref-USB" class="csl-entry">
+Labor Statistics, B. of. (2023). Ithaca, NY - may 2022 OEWS metropolitan
+and nonmetropolitan area occupational employment and wage estimates. In
+<em>U.S. Bureau of Labor Statistics</em>. U.S. Bureau of Labor
+Statistics. <a href="https://www.bls.gov/oes/current/oes_27060.htm">https://www.bls.gov/oes/current/oes_27060.htm</a>
+</div>
+<div id="ref-CCE" class="csl-entry">
+Leung, J. (2020). In <em>Center for Climate and Energy Solutions</em>.
+<a href="https://www.c2es.org/document/decarbonizing-u-s-buildings/">https://www.c2es.org/document/decarbonizing-u-s-buildings/</a>
+</div>
+</div>
+</div>
